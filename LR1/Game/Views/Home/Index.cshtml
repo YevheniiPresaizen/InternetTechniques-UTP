@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+<html>
+<head>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <style>
+        .col-md-1 {
+            height:50px;
+        }
+    </style>
+    <div class="row">
+        <div class="col-md-1" style="background-color:red" onclick="color = 'red';"></div>
+        <div class="col-md-1" style="background-color:orange" onclick="color = 'orange';"></div>
+        <div class="col-md-1" style="background-color:green" onclick="color = 'green';"></div>
+        <div class="col-md-1" style="background-color:yellow" onclick="color = 'yellow';"></div>
+        <div class="col-md-1" style="background-color:blue" onclick="color = 'blue';"></div>
+        <div class="col-md-1" style="background-color:gray" onclick="color = 'gray';"></div>
+        <div class="col-md-1" style="background-color:black" onclick="color = 'black';"></div>
+        <div class="col-md-1" style="background-color:violet" onclick="color = 'violet';"></div>
+    </div>
+    <hr />
+
+    @for (int i = 0; i < 20; i++)
+    {
+    <div id="@i" class="col-md-1" style="background-color:lightgrey; border: 1px solid #777;" onclick="doit(@i, color);"></div>
+    }
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/@@aspnet/signalr/dist/browser/signalr.js"></script>
+
+
+    <script type="text/javascript">
+
+
+        "use strict";
+
+        var color = '';
+
+        var connection = new signalR.HubConnectionBuilder().withUrl("/data").build();
+
+        connection.on("ChangeColorInBrowser", function (id, c) {
+            $('#' + id).css("background-color", c);
+        });
+
+        connection.start();
+
+
+        function doit(id, kolor) {
+            connection.invoke("ChangeColor", id, kolor);
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
