@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v/kdc73zTOiQmXgDMWzDcB0Gfgs2KQcZAMKr8GB61bjfiCSGRejjtAxSvO4YQeSAsoIE1pfavvvOGL8NfFVbYQ==",
+  "dgSpecHash": "c3L0d0WZAocGv9233ybaHGBBlSLJfVchu9fsQ4Mtgdps39RyaLeuybAszO1FjSlrMios5t+1g/vXqBCJIi0laA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\UTP (Erasmus+)\\InternetTechniques\\LR1\\SulimaGame\\SulimaGame\\Game\\Game.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\UTP (Erasmus+)\\InternetTechniques\\LR1\\Game\\Game.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",

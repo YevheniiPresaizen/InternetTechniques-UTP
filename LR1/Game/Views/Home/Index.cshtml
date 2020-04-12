@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = null;
+    ViewData["Title"] = "Game";
 }
 <html>
 <head>
@@ -7,27 +7,47 @@
 </head>
 <body>
     <style>
-        .col-md-1 {
-            height:50px;
+        .colors {
+            height: 50px;
+            width: 50px;
+            border-radius: 25px 25px 25px 25px;
+            float: left;
+        }
+
+        .no_colors {
+            height: 50px;
+            width: 50px;
+            border-radius: 25px 25px 25px 25px;
+            float: left;
         }
     </style>
-    <div class="row">
-        <div class="col-md-1" style="background-color:red" onclick="color = 'red';"></div>
-        <div class="col-md-1" style="background-color:orange" onclick="color = 'orange';"></div>
-        <div class="col-md-1" style="background-color:green" onclick="color = 'green';"></div>
-        <div class="col-md-1" style="background-color:yellow" onclick="color = 'yellow';"></div>
-        <div class="col-md-1" style="background-color:blue" onclick="color = 'blue';"></div>
-        <div class="col-md-1" style="background-color:gray" onclick="color = 'gray';"></div>
-        <div class="col-md-1" style="background-color:black" onclick="color = 'black';"></div>
-        <div class="col-md-1" style="background-color:violet" onclick="color = 'violet';"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 border solid #CCC h-100">
+                <div>
+                    <h3>Choose your color</h3>
+                </div>
+                <div class="colors" style="background-color:red" onclick="color = 'red';"></div>
+                <div class="colors" style="background-color:orange" onclick="color = 'orange';"></div>
+                <div class="colors" style="background-color:green" onclick="color = 'green';"></div>
+                <div class="colors" style="background-color:yellow" onclick="color = 'yellow';"></div>
+                <div class="colors" style="background-color:blue" onclick="color = 'blue';"></div>
+                <div class="colors" style="background-color:gray" onclick="color = 'gray';"></div>
+                <div class="colors" style="background-color:black" onclick="color = 'black';"></div>
+                <div class="colors" style="background-color:violet" onclick="color = 'violet';"></div>
+            </div>
+
+            <div class="col-md-9">
+                <div>
+                    <h3>Click to color the circle</h3>
+                </div>
+                @for (int i = 0; i < 20; i++)
+                {
+                    <div id="@i" class="no_colors" style="background-color:lightgrey; border: 1px solid #777;" onclick="doit(@i, color);"></div>
+                }
+            </div>
+        </div>
     </div>
-    <hr />
-
-    @for (int i = 0; i < 20; i++)
-    {
-    <div id="@i" class="col-md-1" style="background-color:lightgrey; border: 1px solid #777;" onclick="doit(@i, color);"></div>
-    }
-
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/@@aspnet/signalr/dist/browser/signalr.js"></script>
